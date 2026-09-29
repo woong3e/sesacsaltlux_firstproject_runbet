@@ -1,0 +1,70 @@
+{
+  "challenges": [
+    {
+      "id": "weekend-running",
+      "title": "주말 러닝 챌린지",
+      "startDate": "2026-03-18",
+      "endDate": "2026-03-24",
+      "maxParticipants": 4,
+      "entryFee": 100000,
+      "description": "",
+      "status": "ongoing",
+      "coverImage": "/images/running-sunset.png",
+      "participantCount": 4,
+      "participantAvatars": [0, 1, 2, 3]
+    },
+    {
+      "id": "april-running",
+      "title": "봄맞이 4월 러닝",
+      "startDate": "2026-04-01",
+      "endDate": "2026-04-07",
+      "maxParticipants": 5,
+      "entryFee": 10000,
+      "description": "",
+      "status": "ongoing",
+      "coverImage": "/images/running-sunset.png",
+      "participantCount": 5,
+      "participantAvatars": [0, 1, 2, 3]
+    },
+    {
+      "title": "333",
+      "startDate": "2026-09-29",
+      "endDate": "2026-09-30",
+      "maxParticipants": 3,
+      "entryFee": 5000,
+      "description": "333",
+      "status": "upcoming",
+      "coverImage": "/images/running-sunset.png",
+      "participantCount": 1,
+      "participantAvatars": [0],
+      "id": "lhugskSl0I0"
+    },
+    {
+      "title": "ㅁㅎㅇㅎㅁㄶㅁㅇㄴ",
+      "startDate": "2026-09-01",
+      "endDate": "2026-10-01",
+      "maxParticipants": 4,
+      "entryFee": 10000,
+      "description": "",
+      "status": "upcoming",
+      "coverImage": "/images/running-sunset.png",
+      "participantCount": 1,
+      "participantAvatars": [0],
+      "id": "aPoor1vBoLs"
+    },
+    {
+      "title": "555",
+      "startDate": "2026-09-29",
+      "endDate": "2026-09-30",
+      "maxParticipants": 4,
+      "entryFee": 20000,
+      "description": "",
+      "status": "upcoming",
+      "coverImage": "/images/running-sunset.png",
+      "participantCount": 1,
+      "participantAvatars": [0],
+      "id": "2pOYSp6JBLg"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
