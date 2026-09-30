@@ -4,9 +4,14 @@ import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { Icon } from "@/components/ui/icon";
 import { ChallengeCard } from "@/components/home/challenge-card";
+import { getChallengeStatus } from "@/lib/challenge-status";
 import { getChallenges } from "@/lib/api/challenges";
 
-export function ChallengeList() {
+type ChallengeListProps = {
+  showViewAll?: boolean;
+};
+
+export function ChallengeList({ showViewAll = true }: ChallengeListProps) {
   const {
     data: challenges = [],
     isPending,
@@ -17,6 +22,9 @@ export function ChallengeList() {
     queryKey: ["challenges", "list"],
     queryFn: ({ signal }) => getChallenges(signal),
   });
+  const ongoingChallenges = challenges.filter(
+    (challenge) => getChallengeStatus(challenge) === "ongoing",
+  );
 
   return (
     <section aria-labelledby="challenges-heading" className="mt-6">
@@ -27,13 +35,15 @@ export function ChallengeList() {
         >
           진행 중인 챌린지
         </h2>
-        <Link
-          href="/challenges/history"
-          className="flex min-h-8 items-center gap-0.5 text-[15px] tracking-[-0.4px] text-muted"
-        >
-          전체보기
-          <Icon name="chevronRight" className="size-4" />
-        </Link>
+        {showViewAll && (
+          <Link
+            href="/challenges/lists"
+            className="flex min-h-8 items-center gap-0.5 text-[15px] tracking-[-0.4px] text-muted"
+          >
+            전체보기
+            <Icon name="chevronRight" className="size-4" />
+          </Link>
+        )}
       </div>
       {isPending && (
         <p
@@ -58,17 +68,17 @@ export function ChallengeList() {
           </button>
         </div>
       )}
-      {isSuccess && challenges.length === 0 && (
+      {isSuccess && ongoingChallenges.length === 0 && (
         <p
           role="status"
           className="flex min-h-[120px] items-center justify-center rounded-2xl bg-surface px-4 text-sm text-muted"
         >
-          아직 등록된 챌린지이 없어요.
+          아직 등록된 챌린지가 없어요.
         </p>
       )}
-      {isSuccess && challenges.length > 0 && (
+      {isSuccess && ongoingChallenges.length > 0 && (
         <ul className="space-y-3">
-          {challenges.map((challenge) => (
+          {ongoingChallenges.map((challenge) => (
             <li key={challenge.id}>
               <ChallengeCard challenge={challenge} />
             </li>

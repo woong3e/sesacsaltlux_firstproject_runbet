@@ -2,7 +2,7 @@ import Link from "next/link";
 import { MobileScreen } from "@/components/layout/mobile-screen";
 import { CelebrationEmblem } from "@/components/challenges/celebration-emblem";
 import { ResultRankings } from "@/components/challenges/result-rankings";
-import { previewPeriod } from "@/components/challenges/preview-data";
+import { ChallengePeriod } from "@/components/challenges/challenge-period";
 
 type ResultsPageProps = { params: Promise<{ id: string }> };
 
@@ -16,7 +16,7 @@ export default async function ResultsPage({ params }: ResultsPageProps) {
           챌린지 결과가 공개되었습니다!
         </h1>
         <p className="mt-2 text-center text-[14px] text-[#626b81]">
-          {previewPeriod}
+          <ChallengePeriod challengeId={id} />
         </p>
         <ResultRankings challengeId={id} />
         <Link

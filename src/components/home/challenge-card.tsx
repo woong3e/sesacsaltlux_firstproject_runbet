@@ -1,21 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Avatar } from "@/components/ui/avatar";
+import { getChallengeStatus } from "@/lib/challenge-status";
 import type { Challenge, ChallengeStatus } from "@/types/challenge";
 
 const statusLabels: Record<ChallengeStatus, string> = {
   ongoing: "진행중",
   upcoming: "대기중",
+  done: "종료",
 };
 
 const statusStyles: Record<ChallengeStatus, string> = {
   ongoing: "bg-[#e2eaff] text-brand",
   upcoming: "bg-[#ececf2] text-[#73788b]",
+  done: "bg-[#ececf2] text-[#73788b]",
 };
 
 function formatShortDate(date: string) {
-  const [, month, day] = date.split("-");
-  return `${Number(month)}.${Number(day)}`;
+  const [datePart, timePart] = date.split("T");
+  const [, month, day] = datePart.split("-");
+  const formattedDate = `${Number(month)}.${Number(day)}`;
+
+  if (!timePart) return formattedDate;
+
+  const [hours, minutes] = timePart.split(":");
+  return `${formattedDate} ${hours}:${minutes}`;
 }
 
 type ChallengeCardProps = {
@@ -23,6 +32,9 @@ type ChallengeCardProps = {
 };
 
 export function ChallengeCard({ challenge }: ChallengeCardProps) {
+  const status = getChallengeStatus(challenge);
+  const participants = challenge.participants ?? [];
+
   return (
     <article aria-labelledby={`challenge-${challenge.id}`}>
       <Link
@@ -55,26 +67,26 @@ export function ChallengeCard({ challenge }: ChallengeCardProps) {
               </time>
             </p>
             <span
-              className={`shrink-0 rounded-full px-3 py-1.5 text-[13px] leading-5 font-semibold ${statusStyles[challenge.status]}`}
+              className={`shrink-0 rounded-full px-3 py-1.5 text-[13px] leading-5 font-semibold ${statusStyles[status]}`}
             >
-              {statusLabels[challenge.status]}
+              {statusLabels[status]}
             </span>
           </div>
           <div
             className="mt-0.5 flex items-center gap-1.5"
-            aria-label={`참여자 ${challenge.participantCount}명`}
+            aria-label={`참여자 ${participants.length}명`}
           >
             <div className="flex -space-x-[5px]">
-              {challenge.participantAvatars.slice(0, 4).map((avatarIndex) => (
+              {participants.slice(0, 4).map((participant) => (
                 <Avatar
-                  key={avatarIndex}
-                  index={avatarIndex}
+                  key={participant.userId}
+                  index={participant.avatarIndex}
                   className="size-[23px] border border-surface"
                 />
               ))}
             </div>
             <span className="text-[13px] leading-5 text-[#73798d]">
-              {challenge.participantCount}명
+              {participants.length}명
             </span>
           </div>
         </div>

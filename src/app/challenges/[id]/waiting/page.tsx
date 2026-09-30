@@ -12,7 +12,7 @@ export default async function WaitingPage({ params }: WaitingPageProps) {
       <main className="flex flex-1 flex-col justify-center px-6 py-12">
         <CelebrationEmblem variant="waiting" />
         <h1 className="mt-5 text-center text-[25px] font-bold tracking-[-1px]">
-          챌린지이 종료되었습니다!
+          챌린지가 종료되었습니다!
         </h1>
         <p className="mt-4 text-center text-[16px] leading-7 text-[#d2d6df]">
           모든 참가자의 기록을 집계하고 있어요.
