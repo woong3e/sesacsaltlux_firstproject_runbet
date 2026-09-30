@@ -50,8 +50,12 @@ const iconPaths = {
   ),
   runner: (
     <>
-      <circle cx="15" cy="4" r="2" />
-      <path d="m7 9 4-3 4 3 4 1m-7-2-3 6 5 3 1 5M9 14l-3 5H2m9-8 4 3 4-1" />
+      <circle cx="15" cy="3.5" r="1.8" />
+      <path d="M12.5 7 10 13" />
+      <path d="M12.5 7H8.5L6 10.5" />
+      <path d="m12.5 7 3.5 3.5 4-1" />
+      <path d="m10 13 5 3-1 5" />
+      <path d="m10 13-3 5H3" />
     </>
   ),
   calendar: (
