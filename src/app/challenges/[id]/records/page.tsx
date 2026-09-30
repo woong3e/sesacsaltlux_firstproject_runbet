@@ -12,7 +12,7 @@ export default async function RecordsPage({ params }: RecordsPageProps) {
       <ChallengeHeader challengeId={id} />
       <ChallengeTabs challengeId={id} active="records" />
       <main className="px-6 pt-9 pb-10">
-        <WeeklyRecords />
+        <WeeklyRecords challengeId={id} />
       </main>
     </MobileScreen>
   );
