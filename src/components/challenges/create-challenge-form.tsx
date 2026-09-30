@@ -1,6 +1,6 @@
 "use client";
 
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import type { FormEvent } from "react";
@@ -8,6 +8,7 @@ import { DateRangeField } from "@/components/challenges/date-range-field";
 import { EntryFeeField } from "@/components/challenges/entry-fee-field";
 import { Icon } from "@/components/ui/icon";
 import { createChallenge } from "@/lib/api/challenges";
+import { DEMO_OWNER_ID, getUser } from "@/lib/api/users";
 
 const participantOptions = Array.from({ length: 9 }, (_, index) => index + 2);
 const labelClassName =
@@ -25,31 +26,38 @@ export function CreateChallengeForm() {
   const [entryFee, setEntryFee] = useState(10_000);
   const [description, setDescription] = useState("");
   const [validationError, setValidationError] = useState("");
+  const balanceQuery = useQuery({
+    queryKey: ["users", DEMO_OWNER_ID],
+    queryFn: ({ signal }) => getUser(DEMO_OWNER_ID, signal),
+  });
 
-  const mutation = useMutation({
+  const createChallengeMutation = useMutation({
     mutationFn: createChallenge,
     onSuccess: async (challenge) => {
-      await queryClient.invalidateQueries({ queryKey: ["challenges"] });
+      await Promise.all([
+        queryClient.invalidateQueries({ queryKey: ["challenges"] }),
+        queryClient.invalidateQueries({ queryKey: ["users"] }),
+      ]);
       router.push(`/challenges/${challenge.id}/invite`);
     },
   });
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (mutation.isPending) return;
+    if (createChallengeMutation.isPending) return;
 
     if (!title.trim()) {
       setValidationError(" 챌린지 제목을 입력해 주세요.");
       return;
     }
 
-    if (!startDate || !endDate || endDate < startDate) {
+    if (!startDate || !endDate || endDate <= startDate) {
       setValidationError("시작일과 종료일을 올바르게 선택해 주세요.");
       return;
     }
 
     setValidationError("");
-    mutation.mutate({
+    createChallengeMutation.mutate({
       title: title.trim(),
       startDate,
       endDate,
@@ -60,11 +68,7 @@ export function CreateChallengeForm() {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      aria-label=" 챌린지 만들기"
-      className="w-full"
-    >
+    <form onSubmit={handleSubmit} aria-label="챌린지 만들기" className="w-full">
       <div>
         <label htmlFor="challenge-title" className={labelClassName}>
           챌린지 제목
@@ -129,6 +133,9 @@ export function CreateChallengeForm() {
 
       <div className="mt-8">
         <EntryFeeField value={entryFee} onChange={setEntryFee} />
+        <p className="mt-3 text-right text-sm text-muted">
+          보유 머니 {balanceQuery.data?.balance.toLocaleString("ko-KR") ?? "-"}원
+        </p>
       </div>
 
       <div className="mt-9">
@@ -146,19 +153,22 @@ export function CreateChallengeForm() {
         />
       </div>
 
-      {(validationError || mutation.isError) && (
+      {(validationError || createChallengeMutation.isError) && (
         <p role="alert" className="mt-4 text-sm leading-5 text-red-600">
           {validationError ||
-            " 챌린지을 생성하지 못했어요. 잠시 후 다시 시도해 주세요."}
+            createChallengeMutation.error?.message ||
+            "챌린지를 생성하지 못했어요. 잠시 후 다시 시도해 주세요."}
         </p>
       )}
 
       <button
         type="submit"
-        disabled={mutation.isPending}
+        disabled={createChallengeMutation.isPending}
         className="mt-8 flex h-[60px] w-full items-center justify-center rounded-[10px] bg-[#181c25] text-[17px] font-bold tracking-[-0.5px] text-white shadow-sm transition-colors hover:bg-[#282e3b] disabled:cursor-wait disabled:opacity-60"
       >
-        {mutation.isPending ? " 챌린지 생성 중..." : " 챌린지 생성하기"}
+        {createChallengeMutation.isPending
+          ? " 챌린지 생성 중..."
+          : " 챌린지 생성하기"}
       </button>
     </form>
   );

@@ -1,4 +1,22 @@
-export type ChallengeStatus = "ongoing" | "upcoming";
+export type ChallengeStatus = "upcoming" | "ongoing" | "done";
+
+export interface ChallengeRecord {
+  id: string;
+  date: string;
+  distance: number;
+  durationSeconds?: number;
+  memo?: string;
+}
+
+export interface ChallengeParticipant {
+  userId: string;
+  name: string;
+  avatarIndex: number;
+  joinedAt: string;
+  paidAmount: number;
+  distance: number;
+  records: ChallengeRecord[];
+}
 
 export interface CreateChallengeInput {
   title: string;
@@ -11,8 +29,13 @@ export interface CreateChallengeInput {
 
 export interface Challenge extends CreateChallengeInput {
   id: string;
-  status: ChallengeStatus;
   coverImage: string;
-  participantCount: number;
-  participantAvatars: number[];
+  participants: ChallengeParticipant[];
+}
+
+export interface User {
+  id: string;
+  name: string;
+  avatarIndex: number;
+  balance: number;
 }

@@ -9,11 +9,15 @@ type DateRangeFieldProps = {
   onEndDateChange: (value: string) => void;
 };
 
-const weekdays = ["일", "월", "화", "수", "목", "금", "토"];
-
-function formatDate(value: string) {
-  const date = new Date(`${value}T00:00:00`);
-  return `${date.getFullYear()}. ${date.getMonth() + 1}.${date.getDate()} (${weekdays[date.getDay()]})`;
+function formatDateTime(value: string) {
+  return new Intl.DateTimeFormat("ko-KR", {
+    month: "numeric",
+    day: "numeric",
+    weekday: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).format(new Date(value));
 }
 
 export function DateRangeField({
@@ -30,15 +34,15 @@ export function DateRangeField({
       <div className="flex h-[50px] items-center gap-2 rounded-[9px] border border-[#e1e3eb] px-3 shadow-xs">
         <Icon name="calendar" className="size-[19px] shrink-0" />
         <label className="relative flex h-10 min-w-0 flex-1 cursor-pointer items-center justify-center rounded-sm focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-brand">
-          <span className="sr-only">시작일</span>
+          <span className="sr-only">시작 일시</span>
           <span
             aria-hidden="true"
-            className={`whitespace-nowrap text-[clamp(11px,3.3vw,13px)] tracking-[-0.4px] ${startDate ? "text-foreground" : "text-muted"}`}
+            className={`whitespace-nowrap text-[clamp(10px,3vw,13px)] tracking-[-0.4px] ${startDate ? "text-foreground" : "text-muted"}`}
           >
-            {startDate ? formatDate(startDate) : "시작일 선택"}
+            {startDate ? formatDateTime(startDate) : "시작 일시 선택"}
           </span>
           <input
-            type="date"
+            type="datetime-local"
             name="startDate"
             required
             value={startDate}
@@ -51,15 +55,15 @@ export function DateRangeField({
           ~
         </span>
         <label className="relative flex h-10 min-w-0 flex-1 cursor-pointer items-center justify-center rounded-sm focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-brand">
-          <span className="sr-only">종료일</span>
+          <span className="sr-only">종료 일시</span>
           <span
             aria-hidden="true"
-            className={`whitespace-nowrap text-[clamp(11px,3.3vw,13px)] tracking-[-0.4px] ${endDate ? "text-foreground" : "text-muted"}`}
+            className={`whitespace-nowrap text-[clamp(10px,3vw,13px)] tracking-[-0.4px] ${endDate ? "text-foreground" : "text-muted"}`}
           >
-            {endDate ? formatDate(endDate) : "종료일 선택"}
+            {endDate ? formatDateTime(endDate) : "종료 일시 선택"}
           </span>
           <input
-            type="date"
+            type="datetime-local"
             name="endDate"
             required
             min={startDate || undefined}
