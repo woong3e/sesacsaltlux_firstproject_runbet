@@ -6,12 +6,14 @@ import { Icon } from "@/components/ui/icon";
 import { ChallengeCard } from "@/components/home/challenge-card";
 import { getChallengeStatus } from "@/lib/challenge-status";
 import { getChallenges } from "@/lib/api/challenges";
+import { useCurrentTime } from "@/hooks/use-current-time";
 
 type ChallengeListProps = {
   showViewAll?: boolean;
 };
 
 export function ChallengeList({ showViewAll = true }: ChallengeListProps) {
+  const now = useCurrentTime();
   const {
     data: challenges = [],
     isPending,
@@ -23,7 +25,7 @@ export function ChallengeList({ showViewAll = true }: ChallengeListProps) {
     queryFn: ({ signal }) => getChallenges(signal),
   });
   const ongoingChallenges = challenges.filter(
-    (challenge) => getChallengeStatus(challenge) === "ongoing",
+    (challenge) => getChallengeStatus(challenge, now) === "ongoing",
   );
 
   return (

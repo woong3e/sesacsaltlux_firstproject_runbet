@@ -1,4 +1,5 @@
 import { apiClient } from "@/lib/api/client";
+import { getChallengeStatus } from "@/lib/challenge-status";
 import type { Challenge, ChallengeRecord } from "@/types/challenge";
 
 export type AddChallengeRecordInput = {
@@ -26,6 +27,9 @@ export async function addChallengeRecord({
     "/challenges/" + challengeId,
   );
   const challenge = response.data;
+  if (getChallengeStatus(challenge) === "done") {
+    throw new Error("종료된 챌린지에는 기록을 등록할 수 없어요.");
+  }
   const participant = challenge.participants.find(
     (item) => item.userId === userId,
   );

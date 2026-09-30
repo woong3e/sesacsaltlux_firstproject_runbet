@@ -33,6 +33,19 @@ export interface Challenge extends CreateChallengeInput {
   participants: ChallengeParticipant[];
 }
 
+export interface ChallengeParticipantResult extends ChallengeParticipant {
+  rank: number | null;
+  contribution: number;
+  prize: number;
+}
+
+export interface ChallengeResult {
+  rankings: ChallengeParticipantResult[];
+  totalDistance: number;
+  totalPrize: number;
+  amountPerKm: number;
+}
+
 export interface User {
   id: string;
   name: string;

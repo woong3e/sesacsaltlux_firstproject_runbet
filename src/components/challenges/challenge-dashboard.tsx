@@ -129,7 +129,7 @@ export function ChallengeDashboard({
             </h1>
             {status === "done" ? (
               <Link
-                href={"/challenges/" + challengeId + "/waiting"}
+                href={"/challenges/" + challengeId + "/results"}
                 className="shrink-0 rounded-xl bg-[#3862b6] px-3 py-1.5 text-sm"
               >
                 {countdown}
