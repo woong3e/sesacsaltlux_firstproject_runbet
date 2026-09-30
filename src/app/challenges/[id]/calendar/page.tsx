@@ -12,7 +12,7 @@ export default async function CalendarPage({ params }: CalendarPageProps) {
       <ChallengeHeader challengeId={id} />
       <ChallengeTabs challengeId={id} active="calendar" />
       <main className="px-6 pb-10">
-        <ChallengeCalendar />
+        <ChallengeCalendar challengeId={id} />
       </main>
     </MobileScreen>
   );
