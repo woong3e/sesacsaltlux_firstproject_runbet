@@ -25,8 +25,8 @@ export function HomeHeader() {
           <Icon name="bell" className="size-[21px]" />
         </button>
         <Link
-          href="/challenges/history"
-          aria-label="내  챌린지 기록"
+          href="/profile"
+          aria-label="프로필로 이동"
           className="flex size-10 items-center justify-center"
         >
           <Avatar index={0} className="size-7" />
