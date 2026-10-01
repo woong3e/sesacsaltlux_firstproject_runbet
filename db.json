@@ -1,258 +1,7 @@
 {
   "challenges": [
     {
-      "id": "weekend-running",
-      "title": "주말 러닝 챌린지",
-      "startDate": "2026-03-18",
-      "endDate": "2026-03-24",
-      "maxParticipants": 4,
-      "entryFee": 100000,
-      "description": "",
-      "coverImage": "/images/running-sunset.png",
-      "participants": [
-        {
-          "userId": "demo-user-1",
-          "name": "나",
-          "avatarIndex": 0,
-          "joinedAt": "2026-09-30T05:21:43.525Z",
-          "paidAmount": 100000,
-          "distance": 0,
-          "records": []
-        },
-        {
-          "userId": "demo-user-2",
-          "name": "민수",
-          "avatarIndex": 1,
-          "joinedAt": "2026-09-30T05:21:43.526Z",
-          "paidAmount": 100000,
-          "distance": 0,
-          "records": []
-        },
-        {
-          "userId": "demo-user-3",
-          "name": "지현",
-          "avatarIndex": 2,
-          "joinedAt": "2026-09-30T05:21:43.526Z",
-          "paidAmount": 100000,
-          "distance": 0,
-          "records": []
-        },
-        {
-          "userId": "demo-user-4",
-          "name": "현우",
-          "avatarIndex": 3,
-          "joinedAt": "2026-09-30T05:21:43.526Z",
-          "paidAmount": 100000,
-          "distance": 0,
-          "records": []
-        }
-      ]
-    },
-    {
-      "id": "april-running",
-      "title": "봄맞이 4월 러닝",
-      "startDate": "2026-04-01",
-      "endDate": "2026-04-07",
-      "maxParticipants": 5,
-      "entryFee": 10000,
-      "coverImage": "/images/running-sunset.png",
-      "participants": [
-        {
-          "userId": "demo-user-1",
-          "name": "나",
-          "avatarIndex": 0,
-          "joinedAt": "2026-09-30T05:21:43.526Z",
-          "paidAmount": 10000,
-          "distance": 0,
-          "records": []
-        },
-        {
-          "userId": "demo-user-2",
-          "name": "민수",
-          "avatarIndex": 1,
-          "joinedAt": "2026-09-30T05:21:43.526Z",
-          "paidAmount": 10000,
-          "distance": 0,
-          "records": []
-        },
-        {
-          "userId": "demo-user-3",
-          "name": "지현",
-          "avatarIndex": 2,
-          "joinedAt": "2026-09-30T05:21:43.526Z",
-          "paidAmount": 10000,
-          "distance": 0,
-          "records": []
-        },
-        {
-          "userId": "demo-user-4",
-          "name": "현우",
-          "avatarIndex": 3,
-          "joinedAt": "2026-09-30T05:21:43.526Z",
-          "paidAmount": 10000,
-          "distance": 0,
-          "records": []
-        },
-        {
-          "userId": "demo-user-5",
-          "name": "유나",
-          "avatarIndex": 0,
-          "joinedAt": "2026-09-30T05:21:43.526Z",
-          "paidAmount": 10000,
-          "distance": 0,
-          "records": []
-        }
-      ]
-    },
-    {
-      "title": "333",
-      "startDate": "2026-09-29",
-      "endDate": "2026-09-30",
-      "maxParticipants": 3,
-      "entryFee": 5000,
-      "description": "333",
-      "coverImage": "/images/running-sunset.png",
-      "id": "lhugskSl0I0",
-      "participants": [
-        {
-          "userId": "demo-user-1",
-          "name": "나",
-          "avatarIndex": 0,
-          "joinedAt": "2026-09-30T05:21:43.526Z",
-          "paidAmount": 5000,
-          "distance": 0,
-          "records": []
-        }
-      ]
-    },
-    {
-      "title": "ㅁㅎㅇㅎㅁㄶㅁㅇㄴ",
-      "startDate": "2026-09-01",
-      "endDate": "2026-10-01",
-      "maxParticipants": 4,
-      "entryFee": 10000,
-      "description": "",
-      "coverImage": "/images/running-sunset.png",
-      "id": "aPoor1vBoLs",
-      "participants": [
-        {
-          "userId": "demo-user-1",
-          "name": "나",
-          "avatarIndex": 0,
-          "joinedAt": "2026-09-30T05:21:43.526Z",
-          "paidAmount": 10000,
-          "distance": 0,
-          "records": []
-        }
-      ]
-    },
-    {
-      "title": "555",
-      "startDate": "2026-09-29",
-      "endDate": "2026-09-30",
-      "maxParticipants": 4,
-      "entryFee": 20000,
-      "description": "",
-      "coverImage": "/images/running-sunset.png",
-      "id": "2pOYSp6JBLg",
-      "participants": [
-        {
-          "userId": "demo-user-1",
-          "name": "나",
-          "avatarIndex": 0,
-          "joinedAt": "2026-09-30T05:21:43.526Z",
-          "paidAmount": 20000,
-          "distance": 0,
-          "records": []
-        }
-      ]
-    },
-    {
-      "title": "ㅁ",
-      "startDate": "2026-09-30T10:08",
-      "endDate": "2026-10-01T09:13",
-      "maxParticipants": 4,
-      "entryFee": 10000,
-      "description": "",
-      "coverImage": "/images/running-sunset.png",
-      "id": "8Yt3Wau-pn8",
-      "participants": [
-        {
-          "userId": "demo-user-1",
-          "name": "나",
-          "avatarIndex": 0,
-          "joinedAt": "2026-09-30T05:21:43.526Z",
-          "paidAmount": 10000,
-          "distance": 0,
-          "records": []
-        }
-      ]
-    },
-    {
-      "title": "ㄴㅁㅇㄹㄹㄴㅇ",
-      "startDate": "2026-09-01T13:19",
-      "endDate": "2026-09-10T13:19",
-      "maxParticipants": 4,
-      "entryFee": 10000,
-      "description": "",
-      "coverImage": "/images/running-sunset.png",
-      "id": "ZLhH-OfuLL8",
-      "participants": [
-        {
-          "userId": "demo-user-1",
-          "name": "나",
-          "avatarIndex": 0,
-          "joinedAt": "2026-09-30T05:21:43.526Z",
-          "paidAmount": 10000,
-          "distance": 0,
-          "records": []
-        }
-      ]
-    },
-    {
-      "title": "ㅠ",
-      "startDate": "2026-09-04T13:34",
-      "endDate": "2026-10-01T13:34",
-      "maxParticipants": 4,
-      "entryFee": 10000,
-      "description": "",
-      "coverImage": "/images/running-sunset.png",
-      "id": "H2X4i38aLw0",
-      "participants": [
-        {
-          "userId": "demo-user-1",
-          "name": "나",
-          "avatarIndex": 0,
-          "joinedAt": "2026-09-30T05:21:43.526Z",
-          "paidAmount": 10000,
-          "distance": 0,
-          "records": []
-        }
-      ]
-    },
-    {
-      "title": "1",
-      "startDate": "2026-09-30T01:40",
-      "endDate": "2026-10-01T16:40",
-      "maxParticipants": 4,
-      "entryFee": 10000,
-      "description": "",
-      "coverImage": "/images/running-sunset.png",
-      "id": "cTVfD8NvTv0",
-      "participants": [
-        {
-          "userId": "demo-user-1",
-          "name": "나",
-          "avatarIndex": 0,
-          "joinedAt": "2026-09-30T05:21:43.526Z",
-          "paidAmount": 10000,
-          "distance": 0,
-          "records": []
-        }
-      ]
-    },
-    {
-      "title": "ㅁ",
+      "title": "테스트입니다111",
       "startDate": "2026-09-30T14:36",
       "endDate": "2026-10-01T14:36",
       "maxParticipants": 4,
@@ -273,7 +22,7 @@
       "id": "_1n9vbmBryg"
     },
     {
-      "title": "ㅂ",
+      "title": "테스트입니다222",
       "startDate": "2026-09-30T14:38",
       "endDate": "2026-10-08T14:38",
       "maxParticipants": 4,
@@ -301,195 +50,50 @@
       "id": "St0t6FV7hNY"
     },
     {
-      "title": "ㅎㅎ",
-      "startDate": "2026-09-30T14:43",
-      "endDate": "2026-10-01T14:39",
-      "maxParticipants": 4,
-      "entryFee": 10000,
-      "description": "",
-      "coverImage": "/images/running-sunset.png",
-      "participants": [
-        {
-          "userId": "demo-user-1",
-          "name": "나",
-          "avatarIndex": 0,
-          "joinedAt": "2026-09-30T05:39:08.082Z",
-          "paidAmount": 10000,
-          "distance": 0.11,
-          "records": [
-            {
-              "id": "munt2pgu-22fb3so56fi",
-              "date": "2026-09-30",
-              "distance": 0.11
-            }
-          ]
-        },
-        {
-          "userId": "demo-user-6",
-          "name": "서준",
-          "avatarIndex": 1,
-          "joinedAt": "2026-09-30T05:39:13.465Z",
-          "paidAmount": 10000,
-          "distance": 0,
-          "records": []
-        }
-      ],
-      "id": "YQCFaPqbZQc"
-    },
-    {
-      "title": "demo",
-      "startDate": "2026-10-05T15:04",
-      "endDate": "2026-10-31T15:04",
-      "maxParticipants": 3,
+      "title": "제목 테스트",
+      "startDate": "2026-10-01T00:00",
+      "endDate": "2026-10-01T09:00",
+      "maxParticipants": 5,
       "entryFee": 5000,
-      "description": "",
+      "description": "설명 테스트",
       "coverImage": "/images/running-sunset.png",
       "participants": [
         {
           "userId": "demo-user-1",
           "name": "나",
           "avatarIndex": 0,
-          "joinedAt": "2026-09-30T06:05:08.200Z",
+          "joinedAt": "2026-10-01T00:37:39.090Z",
           "paidAmount": 5000,
-          "distance": 0,
-          "records": []
-        },
-        {
-          "userId": "demo-user-10",
-          "name": "지우",
-          "avatarIndex": 1,
-          "joinedAt": "2026-09-30T06:05:13.773Z",
-          "paidAmount": 5000,
-          "distance": 0,
-          "records": []
-        },
-        {
-          "userId": "demo-user-8",
-          "name": "도윤",
-          "avatarIndex": 3,
-          "joinedAt": "2026-09-30T06:05:19.543Z",
-          "paidAmount": 5000,
-          "distance": 0,
-          "records": []
-        }
-      ],
-      "id": "RmmY7731smk"
-    },
-    {
-      "title": "2~10",
-      "startDate": "2026-10-02T21:05",
-      "endDate": "2026-10-10T21:05",
-      "maxParticipants": 4,
-      "entryFee": 10000,
-      "description": "",
-      "coverImage": "/images/running-sunset.png",
-      "participants": [
-        {
-          "userId": "demo-user-1",
-          "name": "나",
-          "avatarIndex": 0,
-          "joinedAt": "2026-09-30T12:05:57.244Z",
-          "paidAmount": 10000,
-          "distance": 15,
+          "distance": 42.2,
           "records": [
             {
-              "id": "muo27ry3-vjvvpoa3cmp",
-              "date": "2026-10-02",
-              "distance": 10,
-              "durationSeconds": 3600,
-              "memo": "굿"
-            },
-            {
-              "id": "muo2861m-wew6e5y3jmr",
-              "date": "2026-10-03",
-              "distance": 5,
-              "durationSeconds": 3600,
-              "memo": "ㅎㅎㅎ"
+              "id": "muotaoy9-2bbo5y3y75v",
+              "date": "2026-10-01",
+              "distance": 42.2,
+              "durationSeconds": 18000
             }
           ]
+        },
+        {
+          "userId": "demo-user-2",
+          "name": "민수",
+          "avatarIndex": 1,
+          "joinedAt": "2026-10-01T00:39:00.298Z",
+          "paidAmount": 5000,
+          "distance": 0,
+          "records": []
         },
         {
           "userId": "demo-user-4",
           "name": "현우",
           "avatarIndex": 3,
-          "joinedAt": "2026-09-30T12:06:02.526Z",
-          "paidAmount": 10000,
+          "joinedAt": "2026-10-01T00:40:55.433Z",
+          "paidAmount": 5000,
           "distance": 0,
           "records": []
         }
       ],
-      "id": "j-PeAaJaq38"
-    },
-    {
-      "title": "ㅠ",
-      "startDate": "2026-09-30T22:16",
-      "endDate": "2026-09-30T22:17",
-      "maxParticipants": 4,
-      "entryFee": 10000,
-      "description": "",
-      "coverImage": "/images/running-sunset.png",
-      "participants": [
-        {
-          "userId": "demo-user-1",
-          "name": "나",
-          "avatarIndex": 0,
-          "joinedAt": "2026-09-30T13:15:24.433Z",
-          "paidAmount": 10000,
-          "distance": 77,
-          "records": [
-            {
-              "id": "muo4oo7n-xsfvtwu5fuc",
-              "date": "2026-09-30",
-              "distance": 77,
-              "durationSeconds": 14400
-            }
-          ]
-        },
-        {
-          "userId": "demo-user-7",
-          "name": "하윤",
-          "avatarIndex": 2,
-          "joinedAt": "2026-09-30T13:15:29.083Z",
-          "paidAmount": 10000,
-          "distance": 0,
-          "records": [
-            {
-              "id": "muo4oo7n-xsfvtwu5fuc",
-              "date": "2026-09-30",
-              "distance": 10,
-              "durationSeconds": 7000
-            }
-          ]
-        }
-      ],
-      "id": "7hCCX0VGpcE"
-    },
-    {
-      "title": "ㅇㅁㄴㅁㅇㄴㅁㅇㄴㅁㅇㄴ",
-      "startDate": "2026-09-08T22:45",
-      "endDate": "2026-10-09T22:45",
-      "maxParticipants": 4,
-      "entryFee": 10000,
-      "description": "",
-      "coverImage": "/images/running-sunset.png",
-      "participants": [
-        {
-          "userId": "demo-user-1",
-          "name": "나",
-          "avatarIndex": 0,
-          "joinedAt": "2026-09-30T13:45:54.211Z",
-          "paidAmount": 10000,
-          "distance": 555,
-          "records": [
-            {
-              "id": "muo5ru3n-6lgye9ecfpu",
-              "date": "2026-09-30",
-              "distance": 555
-            }
-          ]
-        }
-      ],
-      "id": "DE0WZQbh8uM"
+      "id": "Je3P-ZMu90g"
     }
   ],
   "users": [
@@ -497,25 +101,25 @@
       "id": "demo-user-1",
       "name": "나",
       "avatarIndex": 0,
-      "balance": 935000
+      "balance": 905000
     },
     {
       "id": "demo-user-2",
       "name": "민수",
       "avatarIndex": 1,
-      "balance": 100000
+      "balance": 95000
     },
     {
       "id": "demo-user-3",
       "name": "지현",
       "avatarIndex": 2,
-      "balance": 100000
+      "balance": 95000
     },
     {
       "id": "demo-user-4",
       "name": "현우",
       "avatarIndex": 3,
-      "balance": 90000
+      "balance": 85000
     },
     {
       "id": "demo-user-5",
